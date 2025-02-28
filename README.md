@@ -1,6 +1,6 @@
 # About
 
-By the way, you can find the Docker image for section 11 that related to building the backend REST API here:
+By the way, you can find the Docker image on Docker hub here:
 
 https://hub.docker.com/r/choonsiong/go-rest-api
 
