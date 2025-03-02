@@ -7,6 +7,7 @@ import (
 
 var DB *sql.DB
 
+// InitDB initializes the sqlite database
 func InitDB() {
 	var err error
 	DB, err = sql.Open("sqlite3", "sqlite3-data.db")
@@ -21,6 +22,7 @@ func InitDB() {
 	createTables()
 }
 
+// createTables creates all the tables required
 func createTables() {
 	createUsersTable := `CREATE TABLE IF NOT EXISTS users (
 		id INTEGER PRIMARY KEY AUTOINCREMENT,

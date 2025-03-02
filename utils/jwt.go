@@ -9,8 +9,9 @@ import (
 
 const secretKey = "my-secret-key"
 
+// GenerateToken generates a jwt token from the given email and user id
 func GenerateToken(email string, userID int) (string, error) {
-	log.Println("GenerateToken -", email, userID)
+	//log.Println("GenerateToken -", email, userID)
 	return jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
 		"email":  email,
 		"userID": userID,
@@ -18,6 +19,8 @@ func GenerateToken(email string, userID int) (string, error) {
 	}).SignedString([]byte(secretKey))
 }
 
+// VerifyToken verifies the given token and returns the content of the token
+// or error if any
 func VerifyToken(tokenString string) (string, int, error) {
 	parsedToken, err := jwt.Parse(tokenString, func(token *jwt.Token) (interface{}, error) {
 		// Make sure signing method is valid

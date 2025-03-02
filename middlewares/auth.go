@@ -6,6 +6,7 @@ import (
 	"net/http"
 )
 
+// Authenticate authenticates the user request for a valid authorization token
 func Authenticate(c *gin.Context) {
 	token := c.Request.Header.Get("Authorization")
 	if token == "" {

@@ -5,6 +5,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// RegisterRoutes registers all endpoints of the application
 func RegisterRoutes(router *gin.Engine) {
 	router.GET("/events", getEvents)
 	router.GET("/events/:id", getEventByID)

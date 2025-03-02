@@ -12,6 +12,7 @@ type User struct {
 	Password string `json:"password" binding:"required"`
 }
 
+// ValidateCredential validates user credentials
 func (u *User) ValidateCredential() error {
 	query := "SELECT id, password FROM users WHERE email = ?"
 	row := db.DB.QueryRow(query, u.Email)
